@@ -1,1 +1,1 @@
-web: gunicorn PM-KISAN.wsgi --log-file -
+web: gunicorn yotube_django_email-main.wsgi --log-file -
