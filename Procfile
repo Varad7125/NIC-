@@ -1,1 +1,1 @@
-web: gunicorn yotube_django_email-main.wsgi --log-file -
+web: gunicorn accounts.wsgi --log-file -
