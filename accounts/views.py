@@ -3,7 +3,13 @@ from django.shortcuts import redirect, render
 from django.contrib.auth.models import User , auth
 from .models import *
 from django.conf import settings
-# Create your views here.
+import psycopg2
+
+conn = psycopg2.connect(
+   database="user_management", user='postgres', password='varad', host='127.0.0.1', port= '5432'
+)
+cur = conn.cursor()
+
 
 def index(request):
     return render(request , 'login.html')
@@ -14,16 +20,15 @@ def login(request):
         password = request.POST['password']
 
         user = auth.authenticate(username=username,password=password)
-
-        if user is not None:
-            auth.login(request, user)
-            return render(request , 'login.html')
-        else:
-            print('Invalid Credentials')
-            return render(request , 'login.html')
-            
     else:
         return render(request, 'login.html')
+
+
+def loggedin(request):
+    return render(request, 'loggedin.html')
+
+def farmerslogin(request):
+    return render(request, 'farmers.html')
 
 def register(request):
     if request.method == 'POST':

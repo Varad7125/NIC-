@@ -72,3 +72,28 @@ class tehsildars(models.Model):
     email = models.CharField(max_length=20)
 
 
+
+class farmer_new(models.Model):
+    sr_no = models.IntegerField(default=True)
+    pm_kisan_id = models.CharField(max_length=11, default=True)
+    aadhaar_no = models.CharField(max_length=12,default=True, primary_key=True)
+    bank_ifsc = models.CharField(max_length=11, default=True)
+    bank_acc_number = models.CharField(max_length=16, default=True)
+    username = models.TextField(default=True)
+    createdby_tehsildar = models.TextField(default=True)
+    farmer_name = models.CharField(max_length=100,default=True)
+    farmer_father_name = models.TextField(default=True)
+    khata_number = models.IntegerField(default=True)
+    khasra_number = models.TextField(default=True)
+    is_active = models.CharField(max_length=1, default=True)
+    state_code = models.CharField(max_length=20, default=True)
+    district_code = models.CharField(max_length=100, default=True)
+    tehsil_code = models.CharField(max_length=4, default=True)
+    land_area_unit = models.TextField(max_length=100, default=True)
+    land_area = models.TextField(max_length=50, default=True)
+    creation_timestamp = models.DateTimeField(default=True)
+    land_block_code = models.TextField(default=True)
+    land_location = models.CharField(max_length=100, default=True)
+    type_of_mutation = models.CharField(max_length=100, default=True)
+    date_of_mutation= models.DateField(default=True)
+    land_ownership_type = models.TextField(default=True)

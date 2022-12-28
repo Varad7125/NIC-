@@ -17,11 +17,11 @@
             <div class="container"><img src="{% static 'img/clipboard-image-1.png' %}" style="height: 129px;margin-left: -117px;width: 91.1px;"><small style="height: 0px;margin-left: -169px;padding-top: 24px;"><strong>Department of Agriculture and Farmers Welfare</strong></small>
                 <h1 style="margin-left: -574px;margin-top: -76px;height: 16px;width: 294.862px;"><strong>PM-Kisan Yojna</strong></h1>
                 <nav class="navbar navbar-light navbar-expand-md">
-                    <div class="container-fluid"><a class="navbar-brand" href="#">Home</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <div class="container-fluid"><a class="navbar-brand" href="login">Home</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                         <div class="collapse navbar-collapse" id="navcol-1">
                             <ul class="navbar-nav">
-                                <li class="nav-item"><a class="nav-link" href="http://pmkisan.gov.in/" style="color: rgb(11,1,1);">Guidelines</a></li>
-                                <li class="nav-item"><a class="nav-link" href="http://pmkisan.nic.in/LetterandCirculars.aspx">Letters/Circulars</a></li>
+                                <li class="nav-item"><a class="nav-link" href="https://pmkisan.gov.in" style="color: rgb(11,1,1);">Guidelines</a></li>
+                                <li class="nav-item"><a class="nav-link" href="https://pmkisan.gov.in/LetterandCirculars.aspx">Letters/Circulars</a></li>
                                 <li class="nav-item"><a class="nav-link" href="login">Login</a></li>
                                 <li class="nav-item"><a class="nav-link active" href="register">Register</a></li>
                             </ul>
@@ -32,35 +32,40 @@
         </nav><img src="{% static 'img/clipboard-image.png' %}" style="width: 1344px;padding-top: 0px;height: 349.337px;">
         <section class="register-photo">
             <div class="form-container">
-                <form action="register" method="POST">
+                <form action="farmerslogin" method="POST">
                     {% csrf_token %}
 
 
-                    <h2 class="text-center"><strong>Register</strong>&nbsp;to account.</h2><select class="form-select">
-                        <option value="12" selected>Select your Role</option>
-                        <option value="13">NIC Admin</option>
-                        <option value="14">State Admin</option>
-                        <option value="15">District Collector</option>
-                        <option value="16">Tehsildars</option>
-                    </select>
+                    <h2 class="text-center"><strong>Farmers</strong>&nbsp;Registration</h2>
                     <br>
-                    <h6 class="text-left"><strong>First Name</strong>&nbsp;</h6>
-                    <div class="mb-3"><input class="form-control" type="text" name="first_name" placeholder="First Name" style="margin-top: 20px;"></div>
-                    <h6 class="text-left"><strong>Last Name</strong>&nbsp;</h6>
-                    <div class="mb-3"><input class="form-control" type="text" name="last_name" placeholder="Last Name" style="margin-top: 20px;"></div>
+                    <h6 class="text-left"><strong>Pm-Kisan ID</strong>&nbsp;</h6>
+                    <div class="mb-3"><input class="form-control" type="text" name="username" placeholder="Pm-Kisan ID" style="margin-top: 20px;"></div>
                     <h6 class="text-left"><strong>UserName</strong>&nbsp;</h6>
-                    <div class="mb-3"><input class="form-control" type="email" name="username" placeholder="Username" style="margin-top: 20px;"></div>
-                    <h6 class="text-left"><strong>Phone Number</strong>&nbsp;</h6>
-                    <input class="form-control" type="tel" placeholder = "Phone number" style="margin-top: 20px;" />
-                    <h6 class="text-left"><strong>Password</strong>&nbsp;</h6>
-                    <div class="mb-3"><input class="form-control" type="password" name="password" style="margin-top: 20px" placeholder="Password"></div>
-                    <h6 class="text-left"><strong>Email Address</strong>&nbsp;</h6>
-                    <input class="form-control" type="email" name="email" placeholder = "Email Address" style="margin-top: 20px;" />
+                    <div class="mb-3"><input class="form-control" type="text" name="pm_kisan_id" placeholder="Pm-Kisan ID" style="margin-top: 20px;"></div>
+                    <h6 class="text-left"><strong>Farmer Name</strong>&nbsp;</h6>
+                    <div class="mb-3"><input class="form-control" type="text" name="farmer_name" placeholder="Farmer Name" style="margin-top: 20px;"></div>
+                    <h6 class="text-left"><strong>Khata Number</strong>&nbsp;</h6>
+                    <div class="mb-3"><input class="form-control" type="number" name="khata_number" placeholder="Khata Number" style="margin-top: 20px;"></div>
+                    <h6 class="text-left"><strong>Khasra Number</strong>&nbsp;</h6>
+                    <input class="form-control" type="number" name="khasra_number" placeholder = "Khasra Number" style="margin-top: 20px;" />
+                    <h6 class="text-left"><strong>State Code</strong>&nbsp;</h6>
+                    <div class="mb-3"><input class="form-control" type="number" name="state_code" style="margin-top: 20px" placeholder="State Code"></div>
+                    <h6 class="text-left"><strong>District Code</strong>&nbsp;</h6>
+                    <input class="form-control" type="number" name="district_code" placeholder = "District Code" style="margin-top: 20px;" />
+                    <h6 class="text-left"><strong>Tehsil Code</strong>&nbsp;</h6>
+                    <input class="form-control" type="number" name="tehsil_code" placeholder = "Tehsil Code" style="margin-top: 20px;" />
+                    <h6 class="text-left"><strong>Land Area Unit</strong>&nbsp;</h6>
+                    <input class="form-control" type="text" name="land_area_unit" placeholder = "Land Area Unit" style="margin-top: 20px;" />
+                    <h6 class="text-left"><strong>Land Area</strong>&nbsp;</h6>
+                    <input class="form-control" type="number" name="land_area" placeholder = "Land Area" style="margin-top: 20px;" />
+                    <h6 class="text-left"><strong>Aadharr Number</strong>&nbsp;</h6>
+                    <input class="form-control" type="text" name="aadhaar_number" placeholder = "Land Area Unit" style="margin-top: 20px;" />
+                    <h6 class="text-left"><strong>Bank IFSC Code</strong>&nbsp;</h6>
+                    <input class="form-control" type="text" name="bank_ifsc" placeholder = "Land Area Unit" style="margin-top: 20px;" />
+                    <h6 class="text-left"><strong>Bank Account Number</strong>&nbsp;</h6>
+                    <input class="form-control" type="text" name="bank_acc_number" placeholder = "Land Area Unit" style="margin-top: 20px;" />
                     <div class="mb-3"></div>
-                    <h6 class="text-left"><strong>OTP</strong>&nbsp;</h6>
-                    <center>
-                        <input class="form-control" type="number" placeholder="OTP"/>
-                    </center> 
+                    
                     <div class="mb-3">
                         <div class="form-check" style="height: 24px;font-size: 17px;margin-top: 25px;"><label class="form-check-label"><input class="form-check-input" type="checkbox">I agree to the license terms.</label></div>
                     </div>
